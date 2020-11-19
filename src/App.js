@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header";
 import EmployeeList from "./components/EmployeeList";
+import Search from "./components/Search";
 import API from "./utils/API";
 import React, { Component } from "react";
 
@@ -31,6 +32,7 @@ class App extends Component {
     return (
       <div>
         <Header />
+        
         <EmployeeList data={this.state.data} />
 
       </div>

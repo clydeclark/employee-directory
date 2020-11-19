@@ -25,9 +25,9 @@ code {
   font-size: 20;
   padding: 5px;
   background-color: lightgray;
-  float: none;
 }
 
-.left {
+.data-left {
   float: left;
+  padding-right: 10px;
 }

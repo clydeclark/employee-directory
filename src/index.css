@@ -12,7 +12,11 @@ code {
     monospace;
 }
 
-.search-header {
-  font-size: 130;
+#search-header {
+  font-size: 200;
   font-weight: bold;
+  text-align: center;
+  background-color: blue;
+  color: white;
+  padding: 20px;
 }

@@ -10,11 +10,11 @@ function EmployeeList(props) {
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="data-left col-md-1">image</div>
-                    <div class="data-left col-md-3">name</div>
-                    <div class="data-left col-md-2">phone</div>
-                    <div class="data-left col-md-3">email</div>
-                    <div class="data-left col-md-3">date of birth</div>
+                    <div class="data-left col-md-1">Image</div>
+                    <div class="data-left col-md-3">Name</div>
+                    <div class="data-left col-md-2">Phone</div>
+                    <div class="data-left col-md-3">Email</div>
+                    <div class="data-left col-md-3">Date of Birth</div>
                 </div>
                 {employees.map(employee =>
                     <div class="employee col-md-12">

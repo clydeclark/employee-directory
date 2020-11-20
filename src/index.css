@@ -29,5 +29,10 @@ code {
 
 .data-left {
   float: left;
-  padding-right: 10px;
+}
+
+.col-head {
+  color: white;
+  background-color: black;
+  padding: 5px;
 }

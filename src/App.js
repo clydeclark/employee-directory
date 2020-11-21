@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header";
 import EmployeeList from "./components/EmployeeList";
 import Search from "./components/Search";
@@ -11,6 +11,7 @@ class App extends Component {
 
   state = {
     data: [],
+    names: [],
     error: ""
   }
 

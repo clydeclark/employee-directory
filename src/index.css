@@ -21,10 +21,21 @@ code {
   padding: 20px;
 }
 
-.employee {
+#search-field {
+  margin: auto;
+}
+
+.employee:nth-child(odd) {
   font-size: 20;
   padding: 5px;
   background-color: lightgray;
+}
+
+.employee:nth-child(even) {
+  font-size: 20;
+  padding: 5px;
+  background-color: white;
+  border: solid 2px lightgray;
 }
 
 .data-left {
@@ -35,4 +46,8 @@ code {
   color: white;
   background-color: black;
   padding: 5px;
+}
+
+.white {
+  color: white;
 }

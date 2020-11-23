@@ -3,41 +3,47 @@ import './App.css';
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header";
 import EmployeeList from "./components/EmployeeList";
-import Search from "./components/Search";
+// import Search from "./components/Search";
+import toggleSort from "./utils/Sort"
 import API from "./utils/API";
-import React, { Component } from "react";
+import React, { Component, useEffect, useState} from "react";
 
-class App extends Component {
+// class App extends Component {
+function App() {
+  const [data, setData] = useState([]);
+  const [reverse, setReverse] = useState(false);
+  const [error, setError] = useState("");
+  const [search, setSearch] = useState("");
+  // state = {
+  //   data: [],
+  //   reverse: false,
+  //   error: ""
+  // }
 
-  state = {
-    data: [],
-    names: [],
-    error: ""
-  }
-
-  componentDidMount() {
+  // componentDidMount() {
+  useEffect(() => {
     API.getUsers()
     .then(res => 
-      this.setState({
-        data: res.data.results
+      {
+        setData(res.data.results);
       })
-    )
-    .catch(err => this.setState({
-      error: "There was a problem loading the data"
-    }))
-  }
+    .catch(err => 
+      {
+        setError(err.message)
+      })
+  }, []);
 
   
 
-  render(){
+  // render(){
     return (
       <div>
         <Header />
         
-        <EmployeeList data={this.state.data} />
+        <EmployeeList data={data} />
 
       </div>
     );
-  }
+  // }
 }
 export default App;

@@ -39,6 +39,10 @@ code {
   border: solid 2px lightgray;
 }
 
+.hover-finger:hover {
+  cursor: pointer;
+}
+
 .data-left {
   float: left;
 }

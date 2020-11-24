@@ -4,7 +4,6 @@ import './App.css';
 import Header from "./components/Header";
 import EmployeeList from "./components/EmployeeList";
 // import Search from "./components/Search";
-import toggleSort from "./utils/Sort"
 import API from "./utils/API";
 import React, { Component, useEffect, useState} from "react";
 
@@ -14,13 +13,18 @@ function App() {
   const [reverse, setReverse] = useState(false);
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
-  // state = {
-  //   data: [],
-  //   reverse: false,
-  //   error: ""
+
+
+  // function toggleSort(reverse, setReverse) {
+  //   if (reverse) {
+  //       setReverse(false);
+  //   } else {
+  //       setReverse(true);
+  //   }
   // }
 
-  // componentDidMount() {
+  
+
   useEffect(() => {
     API.getUsers()
     .then(res => 
@@ -40,7 +44,7 @@ function App() {
       <div>
         <Header />
         
-        <EmployeeList data={data} />
+        <EmployeeList data={data} reverse={reverse} setReverse={setReverse} />
 
       </div>
     );

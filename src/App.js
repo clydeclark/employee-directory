@@ -25,7 +25,8 @@ function App() {
 
   function searchList(e) {
     const filter = data.filter(employee => {
-      return employee.name.first.toLowerCase().includes(e.target.value.toLowerCase())
+      return (employee.name.first.toLowerCase().includes(e.target.value.toLowerCase()) ||
+              employee.name.last.toLowerCase().includes(e.target.value.toLowerCase()))
     });
     setFilteredData(filter);
   }

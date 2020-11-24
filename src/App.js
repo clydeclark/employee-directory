@@ -41,7 +41,7 @@ function App() {
               name="name"
               type="text"
               className="form-control"
-              placeholder="Type a name to begin"
+              placeholder="Type a first name to begin"
               id="name"
             />
           </div>

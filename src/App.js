@@ -1,18 +1,15 @@
-// import logo from './logo.svg';
 import './App.css';
-// import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header";
 import EmployeeList from "./components/EmployeeList";
-// import Search from "./components/Search";
 import API from "./utils/API";
-import React, { Component, useEffect, useState} from "react";
+import React, { useEffect, useState} from "react";
 
-// class App extends Component {
+
 function App() {
   const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [reverse, setReverse] = useState(false);
   const [error, setError] = useState("");
-  const [search, setSearch] = useState("");
 
   useEffect(() => {
     API.getUsers()
@@ -26,15 +23,30 @@ function App() {
       })
   }, []);
 
-  
-
+  function searchList(e) {
+    const filter = data.filter(employee => {
+      return employee.name.first.toLowerCase().includes(e.target.value.toLowerCase())
+    });
+    setFilteredData(filter);
+  }
   
   return (
       <div>
         <Header />
-        
-        <EmployeeList data={data} reverse={reverse} setReverse={setReverse} />
-
+        <form className="search" id="search-field">
+          <div className="form-group">
+            <label htmlFor="employeeSearch">Search Employee:</label>
+            <input
+              onChange={searchList}
+              name="name"
+              type="text"
+              className="form-control"
+              placeholder="Type a name to begin"
+              id="name"
+            />
+          </div>
+        </form>
+        <EmployeeList data={filteredData.length>0?filteredData:data} reverse={reverse} setReverse={setReverse} />
       </div>
     );
 }

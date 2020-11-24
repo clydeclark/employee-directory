@@ -27,29 +27,13 @@ function EmployeeList(props) {
         }
         props.setReverse(!reverse);
     }
-    function searchList() {
-
-    }
+    
 
     let employeesSorted = sortList();
 
     return (
         <div class="container">
             <div class="row">
-            <form className="search" id="search-field">
-                <div className="form-group">
-                    <label htmlFor="employeeSearch">Search Employee:</label>
-                    <input
-                    value={props.search}
-                    onChange={searchList}
-                    name="name"
-                    type="text"
-                    className="form-control"
-                    placeholder="Type a name to begin"
-                    id="name"
-                    />
-                </div>
-            </form>
                 <div class="col-md-12">
                     <div class="col-head data-left col-md-1">Image</div>
                     <div class="col-head data-left col-md-3 hover-finger" onClick={toggleSort}>Name <i class="glyphicon glyphicon-sort white"></i>(Sort)</div>

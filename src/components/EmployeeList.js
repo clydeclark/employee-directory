@@ -1,16 +1,16 @@
-import React, { Component, useEffect, useState} from "react";
-//import toggleSort from "../utils/Sort";
-// import App from "../App";
-// import API from "../utils/API";
+import React from "react";
+
 function EmployeeList(props) {
     const employees = props.data;
     let reverse = props.reverse;
+
     function sortByName(current, next) {
         if (current.name.first > next.name.first) {
             return 1;
         }
         return -1;
     }
+
     function sortList() {
         if (!reverse) {
             return employees.sort(sortByName);
@@ -18,6 +18,7 @@ function EmployeeList(props) {
             return employees.sort(sortByName).reverse();
         }
     }
+
     function toggleSort() {
         if (!reverse) {
             employees.sort(sortByName);
@@ -27,9 +28,11 @@ function EmployeeList(props) {
         props.setReverse(!reverse);
     }
     function searchList() {
+
     }
+
     let employeesSorted = sortList();
-    // console.log(employees);
+
     return (
         <div class="container">
             <div class="row">
@@ -49,7 +52,7 @@ function EmployeeList(props) {
             </form>
                 <div class="col-md-12">
                     <div class="col-head data-left col-md-1">Image</div>
-                    <div class="col-head data-left col-md-3 hover-finger" onClick={toggleSort}>Name (Sort)<i class="glyphicon glyphicon-sort white"></i></div>
+                    <div class="col-head data-left col-md-3 hover-finger" onClick={toggleSort}>Name <i class="glyphicon glyphicon-sort white"></i>(Sort)</div>
                     <div class="col-head data-left col-md-3">Phone</div>
                     <div class="col-head data-left col-md-3">Email</div>
                     <div class="col-head data-left col-md-2">Date of Birth</div>

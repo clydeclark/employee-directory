@@ -14,17 +14,6 @@ function App() {
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
 
-
-  // function toggleSort(reverse, setReverse) {
-  //   if (reverse) {
-  //       setReverse(false);
-  //   } else {
-  //       setReverse(true);
-  //   }
-  // }
-
-  
-
   useEffect(() => {
     API.getUsers()
     .then(res => 
@@ -39,8 +28,8 @@ function App() {
 
   
 
-  // render(){
-    return (
+  
+  return (
       <div>
         <Header />
         
@@ -48,6 +37,5 @@ function App() {
 
       </div>
     );
-  // }
 }
 export default App;
